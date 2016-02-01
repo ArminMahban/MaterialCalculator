@@ -1,25 +1,595 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKq-FP-jHg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="36" translatesAutoresizingMaskIntoConstraints="NO" id="uOI-Sz-d7c">
+                                        <rect key="frame" x="64" y="54" width="303" height="91"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1U-sk-6pa">
+                                        <rect key="frame" x="8" y="27" width="359" height="39"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="r1U-sk-6pa" secondAttribute="bottom" constant="78" id="3yQ-Y3-PMo"/>
+                                    <constraint firstItem="r1U-sk-6pa" firstAttribute="leading" secondItem="tKq-FP-jHg" secondAttribute="leadingMargin" id="8BX-R1-MSL"/>
+                                    <constraint firstItem="uOI-Sz-d7c" firstAttribute="leading" secondItem="tKq-FP-jHg" secondAttribute="leading" constant="64" id="MWb-gR-943"/>
+                                    <constraint firstAttribute="bottom" secondItem="uOI-Sz-d7c" secondAttribute="bottom" constant="-1" id="X5p-Dn-fGj"/>
+                                    <constraint firstItem="r1U-sk-6pa" firstAttribute="trailing" secondItem="uOI-Sz-d7c" secondAttribute="trailing" id="XMV-v0-Gxs"/>
+                                    <constraint firstItem="r1U-sk-6pa" firstAttribute="trailing" secondItem="tKq-FP-jHg" secondAttribute="trailingMargin" id="Yjk-LX-6D5"/>
+                                    <constraint firstItem="r1U-sk-6pa" firstAttribute="top" secondItem="tKq-FP-jHg" secondAttribute="top" constant="27" id="cXX-t3-yam"/>
+                                    <constraint firstItem="uOI-Sz-d7c" firstAttribute="top" secondItem="tKq-FP-jHg" secondAttribute="top" constant="54" id="mV0-hg-Kth"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUy-SW-Wvx" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="187" y="200" width="94" height="116"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="9">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KtW-IO-GBD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huQ-pp-1B3" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="93" y="200" width="94" height="116"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="8">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xnB-lQ-uCj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFS-2z-8sK" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="-1" y="200" width="94" height="116"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="116" id="Iqa-um-M7w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="7">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oyJ-h4-4Zh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUk-v4-kez" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="281" y="200" width="94" height="116"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="÷">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S2k-3J-brg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQh-KC-5ug" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="281" y="316" width="94" height="116"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="*">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hg2-mL-B0R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuR-Ry-Gbs" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="187" y="316" width="94" height="116"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="6">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="177-dd-uGP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fe-sB-5Un" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="93" y="316" width="94" height="116"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="5">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YzF-nK-WgS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufl-w3-WeU" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="-1" y="316" width="94" height="116"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="116" id="VPz-41-jX1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="4">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xKM-sV-ov8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTZ-Zi-P3a" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="-1" y="432" width="94" height="116"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="116" id="U34-PV-gM9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R3I-eF-xVJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHY-cy-3gP" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="0.0" y="548" width="94" height="116"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title=".">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GAP-Rh-4Kl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGl-L3-eKa" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="94" y="548" width="94" height="116"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ouU-no-3ZJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTK-oy-re7" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="188" y="548" width="94" height="116"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="=">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="equalPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HSI-gj-qvq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOi-MD-RuP" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="93" y="432" width="94" height="116"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="2">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="35o-s5-3ij"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHf-yG-xde" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="187" y="432" width="94" height="116"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="3">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qTa-IC-Nzf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkE-hx-QlY" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="281" y="432" width="94" height="116"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4J4-Zt-t6O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbv-lB-Dgo" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="281" y="548" width="94" height="116"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BuQ-cf-Y6F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsR-c1-4lG" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="-1" y="162" width="94" height="46"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="AnI-3a-Efx"/>
+                                    <constraint firstAttribute="height" constant="46" id="mkK-7x-9nZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="√"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vLj-HL-8f9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Tz-65-op6" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="9" y="116" width="50" height="50"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.4431372549" green="0.28627450980000002" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="7QQ-4l-He9"/>
+                                    <constraint firstAttribute="height" constant="50" id="FgD-2N-lTb"/>
+                                </constraints>
+                                <state key="normal" title="del">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="delPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uCg-3y-a0g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddl-Vy-5jv" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="94" y="162" width="94" height="46"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="Kgx-ov-hy7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="("/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a1M-ob-9eV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U04-5p-kU9" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="188" y="162" width="94" height="46"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title=")"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G0B-Lg-fq9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RpM-Fv-BhN" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="281" y="162" width="94" height="46"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="5OG-Il-4Gr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="^"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleLayerColor">
+                                        <color key="value" red="0.33725490200000002" green="0.74117647060000003" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6g-dj-f80"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aUk-v4-kez" firstAttribute="baseline" secondItem="cUy-SW-Wvx" secondAttribute="baseline" id="0hd-j6-Xvf"/>
+                            <constraint firstItem="vTK-oy-re7" firstAttribute="top" secondItem="ZGl-L3-eKa" secondAttribute="top" id="1TH-is-GTE"/>
+                            <constraint firstItem="ddl-Vy-5jv" firstAttribute="baseline" secondItem="HsR-c1-4lG" secondAttribute="firstBaseline" id="1XH-ru-30Y"/>
+                            <constraint firstItem="huQ-pp-1B3" firstAttribute="baseline" secondItem="LFS-2z-8sK" secondAttribute="firstBaseline" id="5DD-hn-uVa"/>
+                            <constraint firstItem="4Tz-65-op6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="96" id="5Nx-cc-qxI"/>
+                            <constraint firstItem="U04-5p-kU9" firstAttribute="baseline" secondItem="RpM-Fv-BhN" secondAttribute="firstBaseline" id="6U7-yJ-Fvj"/>
+                            <constraint firstItem="pkE-hx-QlY" firstAttribute="leading" secondItem="RQh-KC-5ug" secondAttribute="leading" id="6xu-gD-eY5"/>
+                            <constraint firstItem="huQ-pp-1B3" firstAttribute="baseline" secondItem="cUy-SW-Wvx" secondAttribute="firstBaseline" id="81l-7z-5GJ"/>
+                            <constraint firstItem="ufl-w3-WeU" firstAttribute="leading" secondItem="eTZ-Zi-P3a" secondAttribute="leading" id="8Io-pv-5of"/>
+                            <constraint firstItem="vTK-oy-re7" firstAttribute="top" secondItem="hbv-lB-Dgo" secondAttribute="top" id="8Mn-0L-jAV"/>
+                            <constraint firstItem="ddl-Vy-5jv" firstAttribute="trailing" secondItem="ZGl-L3-eKa" secondAttribute="trailing" id="8bn-HW-sVz"/>
+                            <constraint firstItem="HsR-c1-4lG" firstAttribute="leading" secondItem="LFS-2z-8sK" secondAttribute="leading" id="9Pd-zI-NNF"/>
+                            <constraint firstAttribute="trailing" secondItem="pkE-hx-QlY" secondAttribute="trailing" id="9dS-96-XVI"/>
+                            <constraint firstItem="DOi-MD-RuP" firstAttribute="baseline" secondItem="uHf-yG-xde" secondAttribute="firstBaseline" id="A1c-Kt-5jt"/>
+                            <constraint firstItem="ddl-Vy-5jv" firstAttribute="baseline" secondItem="U04-5p-kU9" secondAttribute="baseline" id="AGV-Ua-jwf"/>
+                            <constraint firstItem="hbv-lB-Dgo" firstAttribute="top" secondItem="pkE-hx-QlY" secondAttribute="bottom" id="AHv-h5-XAL"/>
+                            <constraint firstItem="ZGl-L3-eKa" firstAttribute="top" secondItem="PHY-cy-3gP" secondAttribute="top" id="C8J-YE-6tx"/>
+                            <constraint firstItem="DOi-MD-RuP" firstAttribute="leading" secondItem="2Fe-sB-5Un" secondAttribute="leading" id="CLC-He-u1g"/>
+                            <constraint firstItem="4Tz-65-op6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-7" id="CZO-Sz-JG5"/>
+                            <constraint firstItem="ufl-w3-WeU" firstAttribute="trailing" secondItem="LFS-2z-8sK" secondAttribute="trailing" id="FxB-tn-8qU"/>
+                            <constraint firstItem="DOi-MD-RuP" firstAttribute="baseline" secondItem="eTZ-Zi-P3a" secondAttribute="baseline" id="GED-Ku-grA"/>
+                            <constraint firstItem="cUy-SW-Wvx" firstAttribute="leading" secondItem="huQ-pp-1B3" secondAttribute="trailing" id="GHY-Oj-tbA"/>
+                            <constraint firstItem="huQ-pp-1B3" firstAttribute="top" secondItem="cUy-SW-Wvx" secondAttribute="top" id="Gvi-4x-sSc"/>
+                            <constraint firstItem="2Fe-sB-5Un" firstAttribute="top" secondItem="ufl-w3-WeU" secondAttribute="top" id="HHZ-ht-1ob"/>
+                            <constraint firstItem="cUy-SW-Wvx" firstAttribute="leading" secondItem="UuR-Ry-Gbs" secondAttribute="leading" id="IQ3-XC-A5d"/>
+                            <constraint firstItem="hbv-lB-Dgo" firstAttribute="baseline" secondItem="vTK-oy-re7" secondAttribute="firstBaseline" id="Lr4-Hh-Cvz"/>
+                            <constraint firstItem="aUk-v4-kez" firstAttribute="top" secondItem="cUy-SW-Wvx" secondAttribute="top" id="M1n-IC-OMF"/>
+                            <constraint firstItem="UuR-Ry-Gbs" firstAttribute="top" secondItem="RQh-KC-5ug" secondAttribute="top" id="NUo-mm-4mq"/>
+                            <constraint firstItem="RpM-Fv-BhN" firstAttribute="trailing" secondItem="aUk-v4-kez" secondAttribute="trailing" id="NpM-e9-JBt"/>
+                            <constraint firstItem="pkE-hx-QlY" firstAttribute="trailing" secondItem="RQh-KC-5ug" secondAttribute="trailing" id="O5t-vh-URe"/>
+                            <constraint firstItem="2Fe-sB-5Un" firstAttribute="leading" secondItem="huQ-pp-1B3" secondAttribute="leading" id="PU4-7o-Ub7"/>
+                            <constraint firstItem="huQ-pp-1B3" firstAttribute="trailing" secondItem="2Fe-sB-5Un" secondAttribute="trailing" id="QOU-xr-kWN"/>
+                            <constraint firstItem="tKq-FP-jHg" firstAttribute="leading" secondItem="PHY-cy-3gP" secondAttribute="leading" id="RUX-Xw-9k0"/>
+                            <constraint firstItem="ufl-w3-WeU" firstAttribute="baseline" secondItem="2Fe-sB-5Un" secondAttribute="firstBaseline" id="Rfa-6L-XT9"/>
+                            <constraint firstItem="vTK-oy-re7" firstAttribute="baseline" secondItem="hbv-lB-Dgo" secondAttribute="firstBaseline" id="SBr-qx-sf5"/>
+                            <constraint firstItem="2Fe-sB-5Un" firstAttribute="baseline" secondItem="UuR-Ry-Gbs" secondAttribute="firstBaseline" id="SRH-fW-ANf"/>
+                            <constraint firstItem="vTK-oy-re7" firstAttribute="baseline" secondItem="hbv-lB-Dgo" secondAttribute="baseline" id="Soe-4Z-GrS"/>
+                            <constraint firstItem="PHY-cy-3gP" firstAttribute="baseline" secondItem="ZGl-L3-eKa" secondAttribute="firstBaseline" id="SzQ-0S-yDe"/>
+                            <constraint firstItem="eTZ-Zi-P3a" firstAttribute="top" secondItem="ufl-w3-WeU" secondAttribute="bottom" id="T2M-sn-tCH"/>
+                            <constraint firstItem="HsR-c1-4lG" firstAttribute="trailing" secondItem="LFS-2z-8sK" secondAttribute="trailing" id="Tcg-5C-qFo"/>
+                            <constraint firstItem="LFS-2z-8sK" firstAttribute="baseline" secondItem="huQ-pp-1B3" secondAttribute="firstBaseline" id="Tuz-Ad-B49"/>
+                            <constraint firstItem="ddl-Vy-5jv" firstAttribute="top" secondItem="U04-5p-kU9" secondAttribute="top" id="U7T-sA-pc7"/>
+                            <constraint firstItem="PHY-cy-3gP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="U8z-3X-wQi"/>
+                            <constraint firstItem="vTK-oy-re7" firstAttribute="leading" secondItem="ZGl-L3-eKa" secondAttribute="trailing" id="VIQ-XP-yON"/>
+                            <constraint firstItem="ddl-Vy-5jv" firstAttribute="leading" secondItem="ZGl-L3-eKa" secondAttribute="leading" id="VU8-F9-IRq"/>
+                            <constraint firstItem="U04-5p-kU9" firstAttribute="trailing" secondItem="vTK-oy-re7" secondAttribute="trailing" id="Vbi-Tz-ceI"/>
+                            <constraint firstItem="ZGl-L3-eKa" firstAttribute="baseline" secondItem="PHY-cy-3gP" secondAttribute="firstBaseline" id="VxF-l7-ep6"/>
+                            <constraint firstItem="LFS-2z-8sK" firstAttribute="top" secondItem="4Tz-65-op6" secondAttribute="bottom" constant="34" id="W3h-e6-OMv"/>
+                            <constraint firstItem="RpM-Fv-BhN" firstAttribute="leading" secondItem="cUy-SW-Wvx" secondAttribute="trailing" id="WBc-mS-Eko"/>
+                            <constraint firstItem="U04-5p-kU9" firstAttribute="leading" secondItem="vTK-oy-re7" secondAttribute="leading" id="Wn6-Cc-cKT"/>
+                            <constraint firstItem="huQ-pp-1B3" firstAttribute="baseline" secondItem="LFS-2z-8sK" secondAttribute="baseline" id="Yg7-Fo-2ki"/>
+                            <constraint firstItem="eTZ-Zi-P3a" firstAttribute="baseline" secondItem="DOi-MD-RuP" secondAttribute="firstBaseline" id="YnK-II-IeE"/>
+                            <constraint firstItem="PHY-cy-3gP" firstAttribute="baseline" secondItem="ZGl-L3-eKa" secondAttribute="baseline" id="ZAB-Wk-Q3v"/>
+                            <constraint firstItem="uHf-yG-xde" firstAttribute="leading" secondItem="UuR-Ry-Gbs" secondAttribute="leading" id="aX4-FG-bnU"/>
+                            <constraint firstItem="cUy-SW-Wvx" firstAttribute="trailing" secondItem="UuR-Ry-Gbs" secondAttribute="trailing" id="auy-41-eVU"/>
+                            <constraint firstItem="HsR-c1-4lG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-17" id="b8k-xK-1av"/>
+                            <constraint firstItem="tKq-FP-jHg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bVP-3L-Hzf"/>
+                            <constraint firstItem="eTZ-Zi-P3a" firstAttribute="trailing" secondItem="ufl-w3-WeU" secondAttribute="trailing" id="bnL-8s-nyE"/>
+                            <constraint firstItem="DOi-MD-RuP" firstAttribute="baseline" secondItem="eTZ-Zi-P3a" secondAttribute="firstBaseline" id="buM-qa-f5Q"/>
+                            <constraint firstItem="hbv-lB-Dgo" firstAttribute="leading" secondItem="pkE-hx-QlY" secondAttribute="leading" id="c6Z-ii-0xa"/>
+                            <constraint firstItem="huQ-pp-1B3" firstAttribute="top" secondItem="LFS-2z-8sK" secondAttribute="top" id="cH5-Na-FEd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vTK-oy-re7" secondAttribute="trailing" constant="77" id="cfA-Fu-Q4I"/>
+                            <constraint firstItem="U04-5p-kU9" firstAttribute="baseline" secondItem="ddl-Vy-5jv" secondAttribute="firstBaseline" id="ejV-OW-cwq"/>
+                            <constraint firstItem="ufl-w3-WeU" firstAttribute="leading" secondItem="LFS-2z-8sK" secondAttribute="leading" id="f6c-h5-zSB"/>
+                            <constraint firstItem="ZGl-L3-eKa" firstAttribute="leading" secondItem="PHY-cy-3gP" secondAttribute="trailing" id="f8T-T0-1EV"/>
+                            <constraint firstItem="uHf-yG-xde" firstAttribute="baseline" secondItem="DOi-MD-RuP" secondAttribute="baseline" id="fgK-i0-2Vp"/>
+                            <constraint firstItem="2Fe-sB-5Un" firstAttribute="baseline" secondItem="ufl-w3-WeU" secondAttribute="firstBaseline" id="gSf-1c-OKW"/>
+                            <constraint firstItem="RQh-KC-5ug" firstAttribute="leading" secondItem="aUk-v4-kez" secondAttribute="leading" id="gda-Qm-Tfc"/>
+                            <constraint firstItem="huQ-pp-1B3" firstAttribute="top" secondItem="tKq-FP-jHg" secondAttribute="bottom" constant="56" id="h4J-XB-Ewe"/>
+                            <constraint firstItem="RpM-Fv-BhN" firstAttribute="top" secondItem="U04-5p-kU9" secondAttribute="top" id="hfg-3L-yMC"/>
+                            <constraint firstItem="RpM-Fv-BhN" firstAttribute="baseline" secondItem="U04-5p-kU9" secondAttribute="firstBaseline" id="i9w-ke-9ry"/>
+                            <constraint firstItem="U04-5p-kU9" firstAttribute="baseline" secondItem="RpM-Fv-BhN" secondAttribute="baseline" id="j4e-EN-IdH"/>
+                            <constraint firstItem="huQ-pp-1B3" firstAttribute="leading" secondItem="LFS-2z-8sK" secondAttribute="trailing" id="jhR-8d-mTk"/>
+                            <constraint firstItem="HsR-c1-4lG" firstAttribute="top" secondItem="tKq-FP-jHg" secondAttribute="bottom" constant="18" id="kAm-mB-ytm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PHY-cy-3gP" secondAttribute="bottom" constant="3" id="lWj-SM-GT5"/>
+                            <constraint firstItem="2Fe-sB-5Un" firstAttribute="top" secondItem="UuR-Ry-Gbs" secondAttribute="top" id="lh1-04-vEL"/>
+                            <constraint firstItem="uHf-yG-xde" firstAttribute="top" secondItem="DOi-MD-RuP" secondAttribute="top" id="lpP-JR-To1"/>
+                            <constraint firstItem="pkE-hx-QlY" firstAttribute="baseline" secondItem="uHf-yG-xde" secondAttribute="baseline" id="mJK-If-MlA"/>
+                            <constraint firstItem="ddl-Vy-5jv" firstAttribute="baseline" secondItem="HsR-c1-4lG" secondAttribute="baseline" id="mQM-P5-zMF"/>
+                            <constraint firstItem="ZGl-L3-eKa" firstAttribute="baseline" secondItem="vTK-oy-re7" secondAttribute="baseline" id="mSt-ew-Irc"/>
+                            <constraint firstItem="uHf-yG-xde" firstAttribute="top" secondItem="pkE-hx-QlY" secondAttribute="top" id="o0W-fo-6At"/>
+                            <constraint firstItem="uHf-yG-xde" firstAttribute="baseline" secondItem="pkE-hx-QlY" secondAttribute="firstBaseline" id="o6O-kS-oS1"/>
+                            <constraint firstItem="RpM-Fv-BhN" firstAttribute="leading" secondItem="aUk-v4-kez" secondAttribute="leading" id="oK5-85-87v"/>
+                            <constraint firstItem="hbv-lB-Dgo" firstAttribute="trailing" secondItem="pkE-hx-QlY" secondAttribute="trailing" id="oyY-bJ-Sw8"/>
+                            <constraint firstItem="ufl-w3-WeU" firstAttribute="top" secondItem="LFS-2z-8sK" secondAttribute="bottom" id="r8W-vB-qa7"/>
+                            <constraint firstItem="UuR-Ry-Gbs" firstAttribute="baseline" secondItem="RQh-KC-5ug" secondAttribute="baseline" id="rLq-UE-9Ul"/>
+                            <constraint firstItem="DOi-MD-RuP" firstAttribute="top" secondItem="eTZ-Zi-P3a" secondAttribute="top" id="svU-69-HjE"/>
+                            <constraint firstItem="DOi-MD-RuP" firstAttribute="trailing" secondItem="2Fe-sB-5Un" secondAttribute="trailing" id="tJI-vp-Tyf"/>
+                            <constraint firstItem="UuR-Ry-Gbs" firstAttribute="trailing" secondItem="uHf-yG-xde" secondAttribute="trailing" id="tec-aj-ZWk"/>
+                            <constraint firstItem="cUy-SW-Wvx" firstAttribute="baseline" secondItem="aUk-v4-kez" secondAttribute="firstBaseline" id="u7Z-Qn-gXL"/>
+                            <constraint firstItem="2Fe-sB-5Un" firstAttribute="baseline" secondItem="ufl-w3-WeU" secondAttribute="baseline" id="uaJ-QZ-3pM"/>
+                            <constraint firstItem="aUk-v4-kez" firstAttribute="trailing" secondItem="RQh-KC-5ug" secondAttribute="trailing" id="vKc-Vf-Pk9"/>
+                            <constraint firstItem="UuR-Ry-Gbs" firstAttribute="baseline" secondItem="RQh-KC-5ug" secondAttribute="firstBaseline" id="wgk-Xo-liJ"/>
+                            <constraint firstItem="2Fe-sB-5Un" firstAttribute="baseline" secondItem="UuR-Ry-Gbs" secondAttribute="baseline" id="xRv-DP-ZJW"/>
+                            <constraint firstItem="RpM-Fv-BhN" firstAttribute="trailing" secondItem="tKq-FP-jHg" secondAttribute="trailing" id="xTS-0D-br4"/>
+                            <constraint firstItem="ddl-Vy-5jv" firstAttribute="leading" secondItem="HsR-c1-4lG" secondAttribute="trailing" constant="1" id="yFc-Wi-5Om"/>
+                            <constraint firstItem="ddl-Vy-5jv" firstAttribute="top" secondItem="HsR-c1-4lG" secondAttribute="top" id="zQ6-eX-E11"/>
+                            <constraint firstItem="huQ-pp-1B3" firstAttribute="baseline" secondItem="cUy-SW-Wvx" secondAttribute="baseline" id="zhv-ch-mzp"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="delButton" destination="4Tz-65-op6" id="ofY-YL-d2z"/>
+                        <outlet property="expressionLabel" destination="r1U-sk-6pa" id="lkh-NN-Ska"/>
+                        <outlet property="resultLabel" destination="uOI-Sz-d7c" id="Fva-8b-0Pd"/>
+                        <outletCollection property="buttons" destination="aUk-v4-kez" collectionClass="NSMutableArray" id="0qv-7m-Lei"/>
+                        <outletCollection property="buttons" destination="cUy-SW-Wvx" collectionClass="NSMutableArray" id="PRX-ne-NTV"/>
+                        <outletCollection property="buttons" destination="huQ-pp-1B3" collectionClass="NSMutableArray" id="OID-R5-27t"/>
+                        <outletCollection property="buttons" destination="LFS-2z-8sK" collectionClass="NSMutableArray" id="Hjq-qx-ve2"/>
+                        <outletCollection property="buttons" destination="RQh-KC-5ug" collectionClass="NSMutableArray" id="xCb-Wp-Owx"/>
+                        <outletCollection property="buttons" destination="UuR-Ry-Gbs" collectionClass="NSMutableArray" id="SVN-2U-UKO"/>
+                        <outletCollection property="buttons" destination="2Fe-sB-5Un" collectionClass="NSMutableArray" id="t5C-O5-YCJ"/>
+                        <outletCollection property="buttons" destination="ufl-w3-WeU" collectionClass="NSMutableArray" id="tFq-sg-fUT"/>
+                        <outletCollection property="buttons" destination="eTZ-Zi-P3a" collectionClass="NSMutableArray" id="jU9-Rb-4r4"/>
+                        <outletCollection property="buttons" destination="PHY-cy-3gP" collectionClass="NSMutableArray" id="Bk9-43-V1A"/>
+                        <outletCollection property="buttons" destination="ZGl-L3-eKa" collectionClass="NSMutableArray" id="Efe-O4-Zzn"/>
+                        <outletCollection property="buttons" destination="vTK-oy-re7" collectionClass="NSMutableArray" id="c8O-vk-h2l"/>
+                        <outletCollection property="buttons" destination="DOi-MD-RuP" collectionClass="NSMutableArray" id="991-TE-uXx"/>
+                        <outletCollection property="buttons" destination="uHf-yG-xde" collectionClass="NSMutableArray" id="iaA-wd-wnj"/>
+                        <outletCollection property="buttons" destination="pkE-hx-QlY" collectionClass="NSMutableArray" id="K3h-zk-4Uf"/>
+                        <outletCollection property="buttons" destination="hbv-lB-Dgo" collectionClass="NSMutableArray" id="oXU-e0-R4h"/>
+                        <outletCollection property="buttons" destination="HsR-c1-4lG" collectionClass="NSMutableArray" id="P0o-cx-FbR"/>
+                        <outletCollection property="buttons" destination="ddl-Vy-5jv" collectionClass="NSMutableArray" id="ouf-uZ-96B"/>
+                        <outletCollection property="buttons" destination="U04-5p-kU9" collectionClass="NSMutableArray" id="mST-t1-1IQ"/>
+                        <outletCollection property="buttons" destination="RpM-Fv-BhN" collectionClass="NSMutableArray" id="h4I-t8-JW6"/>
+                        <outletCollection property="operators" destination="HsR-c1-4lG" collectionClass="NSMutableArray" id="tKb-zU-DcN"/>
+                        <outletCollection property="operators" destination="ddl-Vy-5jv" collectionClass="NSMutableArray" id="M42-qT-hoc"/>
+                        <outletCollection property="operators" destination="U04-5p-kU9" collectionClass="NSMutableArray" id="Jd2-q1-ZlL"/>
+                        <outletCollection property="operators" destination="RpM-Fv-BhN" collectionClass="NSMutableArray" id="3qi-QX-jag"/>
+                        <outletCollection property="topRowOperators" destination="RpM-Fv-BhN" collectionClass="NSMutableArray" id="S8R-qn-sRI"/>
+                        <outletCollection property="topRowOperators" destination="U04-5p-kU9" collectionClass="NSMutableArray" id="HSI-nV-dQu"/>
+                        <outletCollection property="topRowOperators" destination="ddl-Vy-5jv" collectionClass="NSMutableArray" id="9X3-cD-C09"/>
+                        <outletCollection property="topRowOperators" destination="HsR-c1-4lG" collectionClass="NSMutableArray" id="lQA-nA-fW7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="566.5" y="598.5"/>
         </scene>
     </scenes>
 </document>
