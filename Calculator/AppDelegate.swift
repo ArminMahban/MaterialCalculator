@@ -7,15 +7,28 @@
 //
 
 import UIKit
+import Material
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        //Configure the side navigation controller
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("Calculator") 
+        let sideViewController = storyboard.instantiateViewControllerWithIdentifier("Sidenav")
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.rootViewController = SideNavigationViewController(mainViewController: mainViewController, sideViewController: sideViewController)
+        window?.makeKeyAndVisible()
+        
+        //Set the preliminary launch color default
+        if NSUserDefaults.standardUserDefaults().objectForKey("color") == nil {
+            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "color")
+        }
+        
         return true
     }
 
