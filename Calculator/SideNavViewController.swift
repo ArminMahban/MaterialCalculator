@@ -101,10 +101,10 @@ class SideNavViewController: UIViewController,UITableViewDelegate, UITableViewDa
     //configure the view
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if NSUserDefaults.standardUserDefaults().objectForKey("color") == nil {
-            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "color")
-        }
+//        print("default2")
+//        if NSUserDefaults.standardUserDefaults().objectForKey("color") == nil {
+//            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "color")
+//        }
         
         let colorArrInt = NSUserDefaults.standardUserDefaults().integerForKey("color")
         mainColor = self.colorArr[colorArrInt]

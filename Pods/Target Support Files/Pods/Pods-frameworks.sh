@@ -85,11 +85,15 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/MathParser.framework"
+  install_framework "Pods/DeviceKit.framework"
   install_framework "Pods/Material.framework"
   install_framework "Pods/MaterialKit.framework"
+  install_framework "Pods/SCLAlertView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/MathParser.framework"
+  install_framework "Pods/DeviceKit.framework"
   install_framework "Pods/Material.framework"
   install_framework "Pods/MaterialKit.framework"
+  install_framework "Pods/SCLAlertView.framework"
 fi

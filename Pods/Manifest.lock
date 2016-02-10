@@ -1,16 +1,22 @@
 PODS:
   - DDMathParser (2.0.0)
+  - DeviceKit (0.3.0)
   - Material (1.28.1)
   - MaterialKit (HEAD based on 0.3.5)
+  - SCLAlertView (0.5.1)
 
 DEPENDENCIES:
   - DDMathParser
+  - DeviceKit (~> 0.3.0)
   - Material (~> 1.0)
   - MaterialKit (HEAD)
+  - SCLAlertView
 
 SPEC CHECKSUMS:
   DDMathParser: 74cddd0aa652cfed79e68fdd076f1ee63ab43a16
+  DeviceKit: cd4f4f1d662619524aaebfc59ab4af2a54d491ec
   Material: 5ca840624a279ce4d02c4e1ef3059d1c0190b7f3
   MaterialKit: 6f1e9382f89593df768bc0c31ded9952a6d8ad46
+  SCLAlertView: 3ac39a863d3e10fc165662b1228b03402297aea9
 
 COCOAPODS: 0.39.0

@@ -24,11 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = SideNavigationViewController(mainViewController: mainViewController, sideViewController: sideViewController)
         window?.makeKeyAndVisible()
         
-        //Set the preliminary launch color default
-        if NSUserDefaults.standardUserDefaults().objectForKey("color") == nil {
-            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "color")
-        }
-        
         return true
     }
 

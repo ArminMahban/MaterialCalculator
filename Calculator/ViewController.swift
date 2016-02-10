@@ -10,9 +10,21 @@ import UIKit
 import Material
 import MaterialKit
 import MathParser
+import DeviceKit
+import SCLAlertView
+
+/**
+
+
+ Basic calculator for iOS inspired by Google's material design.
+ Features on-the-fly calculations, calculation history and 
+ 5 different color themes to choose from. 
+ 
+ 
+*/
+
 
 class ViewController: UIViewController {
-
     
     @IBOutlet weak var expressionLabel: UILabel!  //Top label that holds the math
     @IBOutlet weak var resultLabel: UILabel!      //Label the holds the result of the expression label
@@ -159,9 +171,34 @@ class ViewController: UIViewController {
         }
     }
     
+    //App currently displays correctly on 4.7 inch screens. Accomodate for that and display a nice welcome message
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        let device = Device()
+        print("device: \(device)")
+        
+        let groupOfAllowedDevices: [Device] = [.iPhone6, .iPhone6s, .Simulator(.iPhone6), .Simulator(.iPhone6s)]
+        
+        
+        if !device.isOneOf(groupOfAllowedDevices) {
+            print("unallowed device")
+            let alert = SCLAlertView()
+            alert.showCloseButton = false
+            alert.showInfo("Hi Zappos!", subTitle: "Thank you for taking the look at the calculator app I made for you guys. I didn't have the time to make it pixel perfect on this device so please check it out on an iPhone 6/6s (or 6/6s simulator). I really hope you like it!", colorStyle: 0x00BCD4)
+        } else {
+            print("allowed device")
+            let alert = SCLAlertView()
+            alert.addButton("Let's go!"){}
+            alert.showCloseButton = false
+            alert.showInfo("Hi Zappos!", subTitle: "Thank you for taking a look at the calculator app I made for my application. Hope you like it!", colorStyle: 0x00BCD4)
+        }
+    }
+    
     //format the initial view
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         view.backgroundColor = MaterialColor.grey.darken3
         expressionLabel.text! = ""
@@ -170,6 +207,7 @@ class ViewController: UIViewController {
         numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
         numberFormatter.maximumFractionDigits = 10
         
+        print("default1")
         if NSUserDefaults.standardUserDefaults().objectForKey("color") == nil {
             NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "color")
         }
